@@ -28,7 +28,7 @@ runs:
 
     - name: Run release script
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ inputs.NPM_TOKEN }}
       run: ${{ github.action_path }}/release.sh
       shell: bash
