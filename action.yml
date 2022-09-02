@@ -8,7 +8,7 @@ inputs:
     description: 'NPM Token'
     required: true
 runs:
-  using: "composite"
+  using: composite
   steps:
     - name: Checkout
       uses: actions/checkout@v3
@@ -23,32 +23,12 @@ runs:
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: 'lts/*'
-        cache: 'pnpm'
+        node-version: "lts/*"
+        cache: pnpm
 
-    - name: Install dependencies
-      run: pnpm install --frozen-lockfile
-      shell: bash
-
-    - name: Build
-      run: pnpm run --if-present --loglevel error build
-      shell: bash
-
-    - name: Test
-      run: pnpm run --if-present --loglevel error test
-      shell: bash
-
-    - name: Docs
-      run: pnpm run --if-present --silent --no-bail docs
-      shell: bash
-
-    - name: Fix Styles
-      run: pnpm run --if-present --loglevel error fix
-      shell: bash
-
-    - name: Release
+    - name: Run release script
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ inputs.NPM_TOKEN }}
-      run: pnpm semantic-release
+      run: ${{ github.action_path }}/release.sh
       shell: bash
