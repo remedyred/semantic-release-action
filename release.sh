@@ -16,21 +16,20 @@ runScript() {
   local silent="$2"
   local noBail="$3"
 
-  local COMMAND=""
+  local PARAMS=""
 
   if has_script "$script_name"; then
     echo "Running $script_name"
 
-    COMMAND="pnpm run $script_name"
     if [ "$silent" = true ]; then
-      COMMAND="$COMMAND --silent"
+      PARAMS="$PARAMS --silent"
     fi
 
     if [ "$noBail" = true ]; then
-      COMMAND="$COMMAND --no-bail"
+      PARAMS="$PARAMS --no-bail"
     fi
 
-    eval "$COMMAND"
+    eval "pnpm run $PARAMS $script_name"
   else
     echo "No script found for $script_name"
   fi
