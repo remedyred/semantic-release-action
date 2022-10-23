@@ -16,7 +16,7 @@ runs:
         fetch-depth: 0
         token: ${{ inputs.GITHUB_TOKEN }}
 
-    - uses: pnpm/action-setup@v2.2.2
+    - uses: pnpm/action-setup@v2.2.4
       with:
         version: 7
 
