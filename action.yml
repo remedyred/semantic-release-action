@@ -10,6 +10,9 @@ inputs:
   DRY_RUN:
     description: 'Dry run [true/false]'
     required: false
+  RELEASE_SCRIPT:
+    description: 'package.json script to run instead of semantic-release'
+    required: false
 runs:
   using: composite
   steps:

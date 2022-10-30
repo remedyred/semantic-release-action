@@ -3,6 +3,7 @@
 set -e
 
 DRY_RUN=${DRY_RUN:-false}
+RELEASE_SCRIPT=${RELEASE_SCRIPT:-}
 AVAILABLE_SCRIPTS=$(npm run)
 
 has_script() {
@@ -40,6 +41,18 @@ runScript() {
   fi
 }
 
+function release() {
+  if [[ -n "$RELEASE_SCRIPT" ]]; then
+    runScript "$RELEASE_SCRIPT"
+  else
+    if [ "$DRY_RUN" = true ]; then
+      pnpm semantic-release --dry-run
+    else
+      pnpm semantic-release
+    fi
+  fi
+}
+
 echo "Install dependencies"
 pnpm install --frozen-lockfile
 
@@ -51,8 +64,4 @@ runScript "docs" true true
 
 runScript "fix"
 
-if [ "$DRY_RUN" = true ]; then
-  pnpm semantic-release --dry-run
-else
-  pnpm semantic-release
-fi
+release
