@@ -1,10 +1,10 @@
 name: 'Semantic Release'
 description: 'Semantic Release workflow with npm, git, pnpm, and pre-release scripts'
 inputs:
-  GITHUB_TOKEN:  # GitHub PAT
+  GITHUB_TOKEN:
     description: 'GitHub Personal Access Token'
     required: false
-  NPM_TOKEN:  # NPM Token
+  NPM_TOKEN:
     description: 'NPM Token'
     required: true
   DRY_RUN:
