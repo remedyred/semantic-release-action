@@ -7,6 +7,9 @@ inputs:
   NPM_TOKEN:  # NPM Token
     description: 'NPM Token'
     required: true
+  DRY_RUN:
+    description: 'Dry run [true/false]'
+    required: false
 runs:
   using: composite
   steps:
@@ -30,5 +33,6 @@ runs:
       env:
         GITHUB_TOKEN: ${{ github.token }}
         NPM_TOKEN: ${{ inputs.NPM_TOKEN }}
+        DRY_RUN: ${{ inputs.DRY_RUN }}
       run: ${{ github.action_path }}/release.sh
       shell: bash

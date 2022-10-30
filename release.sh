@@ -2,6 +2,7 @@
 
 set -e
 
+DRY_RUN=${DRY_RUN:-false}
 AVAILABLE_SCRIPTS=$(npm run)
 
 has_script() {
@@ -29,7 +30,11 @@ runScript() {
       PARAMS="$PARAMS --no-bail"
     fi
 
-    eval "pnpm run $PARAMS $script_name"
+    if [ "$DRY_RUN" = true ]; then
+      echo "[DRY RUN] pnpm run $PARAMS $script_name"
+    else
+      pnpm run "$PARAMS $script_name"
+    fi
   else
     echo "No script found for $script_name"
   fi
@@ -46,5 +51,8 @@ runScript "docs" true true
 
 runScript "fix"
 
-echo "Releasing"
-pnpm semantic-release
+if [ "$DRY_RUN" = true ]; then
+  pnpm semantic-release --dry-run
+else
+  pnpm semantic-release
+fi
