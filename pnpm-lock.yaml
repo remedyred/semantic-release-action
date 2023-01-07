@@ -1,12 +1,12 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@semantic-release/commit-analyzer': ^9.0.2
-  '@semantic-release/git': ^10.0.1
+  '@semantic-release/commit-analyzer': 9.0.2
+  '@semantic-release/git': 10.0.1
   '@snickbit/eslint-config': 1.4.3
-  conventional-changelog-conventionalcommits: ^5.0.0
+  conventional-changelog-conventionalcommits: 5.0.0
   eslint: 8.31.0
-  semantic-release: ^19.0.5
+  semantic-release: 19.0.5
 
 devDependencies:
   '@semantic-release/commit-analyzer': 9.0.2_semantic-release@19.0.5
@@ -573,7 +573,7 @@ packages:
       eslint: 8.31.0
       eslint-scope: 5.1.1
       eslint-utils: 3.0.0_eslint@8.31.0
-      semver: 7.3.7
+      semver: 7.3.8
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -593,7 +593,7 @@ packages:
       eslint: 8.31.0
       eslint-scope: 5.1.1
       eslint-utils: 3.0.0_eslint@8.31.0
-      semver: 7.3.7
+      semver: 7.3.8
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -2670,7 +2670,7 @@ packages:
       p-reduce: 2.1.0
       read-pkg-up: 7.0.1
       resolve-from: 5.0.0
-      semver: 7.3.7
+      semver: 7.3.8
       semver-diff: 3.1.1
       signale: 1.4.0
       yargs: 16.2.0
