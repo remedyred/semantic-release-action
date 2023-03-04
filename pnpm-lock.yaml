@@ -1,12 +1,12 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@semantic-release/commit-analyzer': ^9.0.2
-  '@semantic-release/git': ^10.0.1
+  '@semantic-release/commit-analyzer': 9.0.2
+  '@semantic-release/git': 10.0.1
   '@snickbit/eslint-config': 1.4.4
-  conventional-changelog-conventionalcommits: ^5.0.0
+  conventional-changelog-conventionalcommits: 5.0.0
   eslint: 8.35.0
-  semantic-release: ^19.0.5
+  semantic-release: 19.0.5
 
 devDependencies:
   '@semantic-release/commit-analyzer': 9.0.2_semantic-release@19.0.5
@@ -2677,7 +2677,7 @@ packages:
       p-reduce: 2.1.0
       read-pkg-up: 7.0.1
       resolve-from: 5.0.0
-      semver: 7.3.7
+      semver: 7.3.8
       semver-diff: 3.1.1
       signale: 1.4.0
       yargs: 16.2.0
@@ -2706,14 +2706,6 @@ packages:
   /semver/6.3.0:
     resolution: {integrity: sha512-b39TBaTSfV6yBrapU89p5fKekE2m/NwnDocOVruQFS1/veMgdzuPcnOM34M6CwxW8jH/lxEa5rBoDeUwu5HHTw==}
     hasBin: true
-    dev: true
-
-  /semver/7.3.7:
-    resolution: {integrity: sha512-QlYTucUYOews+WeEujDoEGziz4K6c47V/Bd+LjSSYcA94p+DmINdf7ncaUinThfvZyu13lN9OY1XDxt8C0Tw0g==}
-    engines: {node: '>=10'}
-    hasBin: true
-    dependencies:
-      lru-cache: 6.0.0
     dev: true
 
   /semver/7.3.8:
